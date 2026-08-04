@@ -1,6 +1,6 @@
 ﻿# Caixinha de Promessas
 
-[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square)](https://SEU-PROJETO.vercel.app)
+[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square)](https://caixinha-de-promessas-livid.vercel.app)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=flat-square)]
 
@@ -8,7 +8,7 @@
 
 🌐 Demonstração Online
 
-https://SEU-PROJETO.vercel.app
+https://caixinha-de-promessas-livid.vercel.app
 
 📂 Código Fonte
 
