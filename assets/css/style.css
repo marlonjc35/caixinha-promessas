@@ -1,0 +1,176 @@
+﻿:root {
+  --bg: #ffffff;
+  --card: rgba(255, 255, 255, 0.6);
+  --text: #0b2545;
+  --accent: #0a74ff;
+  --gold: #c9a84b;
+}
+
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --card: rgba(255, 255, 255, 0.03);
+  --text: #e6eef8;
+  --accent: #3680ff;
+  --gold: #b58f3a;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), rgba(10,20,40,0.08));
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.app {
+  width: 100%;
+  max-width: 780px;
+}
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.card {
+  backdrop-filter: blur(8px);
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(10, 20, 40, 0.08);
+  padding: 28px;
+}
+.card .text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.card .meta {
+  color: var(--accent);
+  font-weight: 600;
+}
+.card-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+}
+button.primary {
+  background: linear-gradient(90deg, var(--accent), #5aa3ff);
+  color: white;
+}
+button.secondary {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  color: rgba(11, 37, 69, 0.8);
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(10, 116, 255, 0.12);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.verse-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 18px;
+}
+.verse-ref {
+  color: rgba(11, 37, 69, 0.75);
+  font-size: 0.95rem;
+}
+.promise-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+button.secondary {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--text);
+}
+button.secondary:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+.card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(10, 20, 40, 0.14);
+}
+.bottom-nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+/* Panel (history / favorites / config) */
+.panel{position:fixed; right:20px; top:80px; width:360px; max-width:calc(100% - 40px); background:var(--card); border-radius:12px; box-shadow:0 12px 40px rgba(10,20,40,0.16); padding:14px; z-index:1200}
+.panel-header{display:flex; gap:8px; align-items:center; margin-bottom:10px}
+.panel-title{flex:1; font-size:1.1rem; margin:0}
+.panel-search{flex:1; padding:8px 10px; border-radius:8px; border:1px solid rgba(0,0,0,0.06)}
+.panel-close{padding:8px 10px; border-radius:8px}
+.panel-list{max-height:60vh; overflow:auto; padding:6px}
+.list-unstyled{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px}
+.panel-item{display:flex; justify-content:space-between; gap:8px; padding:10px; border-radius:10px; background:rgba(255,255,255,0.02); cursor:default}
+.panel-item:focus{outline:2px solid rgba(10,116,255,0.16)}
+.item-main{flex:1}
+.item-title{font-size:0.95rem; color:var(--text); margin-bottom:6px}
+.item-meta{font-size:0.82rem; color:rgba(11,37,69,0.6)}
+.item-actions{display:flex; gap:6px; align-items:center}
+.item-actions button{padding:6px 8px; border-radius:8px}
+.muted{color:rgba(11,37,69,0.45); padding:14px}
+.panel-config .cfg-row{margin-bottom:8px}
+
+@media (max-width:600px){ .panel{left:10px; right:10px; top:70px; width:auto} }
+
+@media (max-width:400px){ .panel-search{display:block} }
+
+/* Mode toggle */
+.mode-toggle{display:flex; align-items:center; gap:8px; margin-right:10px}
+.mode-toggle button{padding:8px 10px}
+
+/* Statistics */
+.stats-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.stat-card{background:rgba(255,255,255,0.03); padding:12px; border-radius:10px}
+.stat-card h3{margin:0 0 6px 0; font-size:0.95rem}
+.stat-card p{margin:0; font-weight:600}
+
+@media (max-width:600px){ .app{padding:10px} .card{padding:18px} .stats-grid{grid-template-columns:1fr} }

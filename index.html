@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Caixinha de Promessas</title>
+    <meta
+      name="description"
+      content="Receba uma promessa diária da Bíblia. Promessas aleatórias, histórico, favoritos e mais."
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/icon-192.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="/assets/icons/icon-512.png">
+    <meta name="theme-color" content="#0a3d62" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <main class="app" role="main">
+      <header class="app-header">
+        <h1>Caixinha de Promessas</h1>
+        <div class="actions">
+          <button id="toggle-theme" aria-label="Alternar tema">Tema</button>
+        </div>
+      </header>
+
+      <section class="card" id="promise-card" aria-live="polite">
+        <div class="card-body">
+          <div class="status-row">
+            <span id="cycle-progress">0 / 0 Promessas</span>
+            <span id="cycle-message"
+              >Sem repetições até completar o ciclo.</span
+            >
+          </div>
+          <p class="meta" id="promise-meta">Clique em "Receber Promessa"</p>
+          <p class="text" id="promise-text">—</p>
+          <div class="verse-footer">
+            <span class="category-pill" id="promise-category">Categoria</span>
+            <span class="verse-ref" id="promise-ref">—</span>
+          </div>
+          <div class="card-controls">
+            <div class="mode-toggle">
+              <label for="mode-toggle-input">Modo:</label>
+              <button id="mode-toggle-input" class="secondary" aria-pressed="false">Aleatório</button>
+            </div>
+            <div class="action-buttons">
+              <button id="btn-receber" class="primary">Receber Promessa</button>
+              <button id="btn-proxima" class="secondary">Próxima</button>
+            </div>
+          </div>
+          <div class="promise-actions">
+            <button
+              id="btn-copy"
+              class="secondary"
+              aria-label="Copiar promessa"
+            >
+              Copiar
+            </button>
+            <button
+              id="btn-share"
+              class="secondary"
+              aria-label="Compartilhar promessa"
+            >
+              Compartilhar
+            </button>
+            <button
+              id="btn-favorite"
+              class="secondary"
+              aria-label="Adicionar aos favoritos"
+            >
+              Favoritar
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <nav class="bottom-nav">
+        <button id="btn-historico">Histórico</button>
+        <button id="btn-favoritos">Favoritos</button>
+        <button id="btn-stats">Estatísticas</button>
+        <button id="btn-config">Configurações</button>
+      </nav>
+
+      <aside id="panel" class="panel" hidden>
+        <!-- Painel dinâmico: histórico, favoritos, configurações -->
+      </aside>
+    </main>
+
+    <script type="module" src="/assets/js/app.js" defer></script>
+  </body>
+</html>

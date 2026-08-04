@@ -1,0 +1,20 @@
+# Ignore files/folders that should not be uploaded to Vercel
+node_modules/
+.env
+.vscode/
+.github/
+.scripts/
+.DS_Store
+*.psd
+*.sketch
+*.ai
+README.md
+assets/screenshots/*
+
+# Keep icons and essential assets
+!assets/icons/
+!assets/css/
+!assets/js/
+!index.html
+!manifest.json
+!service-worker.js
